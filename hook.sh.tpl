@@ -1,4 +1,4 @@
-#!/usr/env/bin bash
+#!/bin/bash
 
 FILENAME="$(basename "$0")"
 GIT_HOOKS_DIR="${GIT_HOOKS_DIR:=$(pwd)/hooks}"
