@@ -84,6 +84,10 @@ exports.HOOK_SCRIPT_PATH = HOOK_SCRIPT_PATH
 exports.log = console.log.bind(console)
 
 if (!module.parent) {
+  if(!!process.env.nogit) {
+    exports.log('nogit environment variable set, git hooks will not be applied.\n')
+    return;
+  }
   exports.log('Symlinking shared-git-hooks runner in .git/hooks\n')
 
   installHooks([
